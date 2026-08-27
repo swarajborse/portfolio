@@ -56,12 +56,13 @@ export default function Hero() {
           >
             View Projects
           </a>
-          <a
-            href="#"
-            className="px-6 py-3 border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white font-medium rounded-lg transition-colors duration-200"
+          <button
+            disabled
+            className="px-6 py-3 border border-slate-800 text-slate-600 font-medium rounded-lg cursor-not-allowed opacity-50"
+            title="Resume coming soon"
           >
             Download Resume
-          </a>
+          </button>
         </motion.div>
 
         <motion.div
