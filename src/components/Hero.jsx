@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "./Icons";
+import { GithubIcon, LinkedinIcon, XIcon } from "./Icons";
 import personal from "../data/personal";
 
 export default function Hero() {
@@ -88,6 +88,15 @@ export default function Hero() {
             className="text-slate-500 hover:text-white transition-colors duration-200"
           >
             <LinkedinIcon size={22} />
+          </a>
+          <a
+            href={personal.x}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X profile"
+            className="text-slate-500 hover:text-white transition-colors duration-200"
+          >
+            <XIcon size={22} />
           </a>
         </motion.div>
 
