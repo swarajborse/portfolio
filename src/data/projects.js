@@ -14,7 +14,7 @@ const projects = [
       "MongoDB Atlas",
       "OpenCV",
     ],
-    github: "#",
+    github: null,
     live: null,
     image: null,
     featured: true,

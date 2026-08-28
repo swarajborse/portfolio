@@ -8,16 +8,19 @@ const contactLinks = [
     label: "Email",
     href: `mailto:${personal.email}`,
     icon: Mail,
+    external: false,
   },
   {
     label: "LinkedIn",
     href: personal.linkedin,
     icon: LinkedinIcon,
+    external: true,
   },
   {
     label: "X",
     href: personal.x,
     icon: XIcon,
+    external: true,
   },
 ];
 
@@ -59,8 +62,8 @@ export default function Contact() {
               <a
                 key={link.label}
                 href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 aria-label={link.label}
                 className="p-3 rounded-lg border border-slate-800 bg-slate-900/50 text-slate-400 hover:text-white hover:border-slate-700 transition-all duration-200"
               >
