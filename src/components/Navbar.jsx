@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -12,6 +12,7 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -19,34 +20,75 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const sections = navLinks
+      .map((link) => document.getElementById(link.href.slice(1)))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
+          );
+        if (visible[0]) setActive(visible[0].target.id);
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-slate-950/55 backdrop-blur-xl backdrop-saturate-150 border-b border-white/10 shadow-lg shadow-slate-950/40"
-          : "bg-transparent"
+        scrolled ? "px-4 pt-3" : ""
       }`}
     >
-      <span
-        aria-hidden
-        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"
-      />
-      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="text-lg font-bold text-white tracking-tight">
-          Aum<span className="text-emerald-400">.</span>
+      <nav
+        className={`mx-auto flex items-center justify-between transition-all duration-300 ${
+          scrolled
+            ? "max-w-4xl h-14 rounded-2xl border border-white/10 bg-slate-950/55 px-5 shadow-lg shadow-slate-950/40 backdrop-blur-xl backdrop-saturate-150"
+            : "max-w-6xl h-16 bg-transparent px-6"
+        }`}
+      >
+        <a
+          href="#"
+          className="group flex items-center gap-1 text-lg font-bold tracking-tight text-white"
+        >
+          AUM<span className="text-emerald-400">.</span>
+          <ArrowUpRight
+            size={16}
+            className="text-emerald-400 opacity-0 -translate-x-1 translate-y-1 transition-all duration-200 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
+          />
         </a>
 
         <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-sm text-slate-400 hover:text-white transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {navLinks.map((link) => {
+            const id = link.href.slice(1);
+            const isActive = active === id;
+            return (
+              <li key={link.href} className="relative">
+                <a
+                  href={link.href}
+                  className={`text-sm transition-colors duration-200 ${
+                    isActive ? "text-white" : "text-slate-400 hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                </a>
+                {isActive && (
+                  <motion.span
+                    layoutId="active-nav"
+                    className="absolute -bottom-2 left-0 right-0 h-[2px] rounded-full bg-emerald-400"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </li>
+            );
+          })}
         </ul>
 
         <button
@@ -64,21 +106,26 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-slate-950/70 backdrop-blur-xl border-b border-white/10 overflow-hidden"
+            className="md:hidden overflow-hidden"
           >
-            <ul className="flex flex-col px-6 py-4 gap-4">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-slate-400 hover:text-white transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="mx-3 my-3 rounded-2xl border border-white/10 bg-slate-950/70 p-3 backdrop-blur-xl">
+              <ul className="flex flex-col gap-1">
+                {navLinks.map((link, i) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="flex items-baseline gap-3 rounded-lg px-4 py-2.5 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <span className="font-mono text-xs text-emerald-400">
+                        0{i + 1}
+                      </span>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
