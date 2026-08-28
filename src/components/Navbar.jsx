@@ -23,10 +23,14 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-slate-950/80 backdrop-blur-md border-b border-slate-800"
+          ? "bg-slate-950/55 backdrop-blur-xl backdrop-saturate-150 border-b border-white/10 shadow-lg shadow-slate-950/40"
           : "bg-transparent"
       }`}
     >
+      <span
+        aria-hidden
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"
+      />
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="text-lg font-bold text-white tracking-tight">
           Aum<span className="text-emerald-400">.</span>
@@ -60,7 +64,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-slate-900 border-b border-slate-800 overflow-hidden"
+            className="md:hidden bg-slate-950/70 backdrop-blur-xl border-b border-white/10 overflow-hidden"
           >
             <ul className="flex flex-col px-6 py-4 gap-4">
               {navLinks.map((link) => (

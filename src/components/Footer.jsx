@@ -4,7 +4,11 @@ import personal from "../data/personal";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800 py-8 px-6">
+    <footer className="py-8 px-6">
+      <div
+        aria-hidden
+        className="mx-auto mb-8 h-[2px] max-w-4xl bg-slate-600"
+      />
       <div className="max-w-4xl mx-auto flex flex-col items-center gap-4">
         <p className="text-slate-500 text-xs uppercase tracking-widest">Quick Links</p>
         <div className="flex items-center gap-4">
