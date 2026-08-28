@@ -9,6 +9,10 @@ export default function Background() {
         aria-hidden
         className="fixed inset-0 z-0 pointer-events-none bg-glow"
       />
+      <div
+        aria-hidden
+        className="fixed inset-0 z-0 pointer-events-none bg-noise"
+      />
     </>
   );
 }
