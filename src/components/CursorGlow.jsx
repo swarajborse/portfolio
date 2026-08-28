@@ -1,13 +1,11 @@
 import { useEffect } from "react";
-import { motion, useMotionValue, useReducedMotion } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 
 export default function CursorGlow() {
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
-  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion) return;
     if ("ontouchstart" in window) return;
     const move = (e) => {
       x.set(e.clientX);
@@ -15,9 +13,7 @@ export default function CursorGlow() {
     };
     document.addEventListener("mousemove", move);
     return () => document.removeEventListener("mousemove", move);
-  }, [prefersReducedMotion, x, y]);
-
-  if (prefersReducedMotion) return null;
+  }, [x, y]);
 
   return (
     <motion.div
