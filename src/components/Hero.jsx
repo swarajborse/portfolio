@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import { GithubIcon, LinkedinIcon, XIcon } from "./Icons";
+import { GithubIcon, LinkedinIcon } from "./Icons";
 import personal from "../data/personal";
 
 export default function Hero() {
@@ -11,7 +11,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-emerald-400 font-mono text-sm mb-4"
+          className="text-blue-400 font-mono text-sm mb-4"
         >
           Hi, my name is
         </motion.p>
@@ -40,8 +40,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-slate-400 text-lg max-w-xl mx-auto mb-10 leading-relaxed"
         >
-          I build things for the web and explore AI/ML. Always learning,
-          always growing &mdash; one project at a time.
+          {personal.tagline}
         </motion.p>
 
         <motion.div
@@ -52,17 +51,24 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-medium rounded-lg transition-colors duration-200"
+            className="px-6 py-3 bg-blue-500 hover:bg-blue-400 text-slate-950 font-medium rounded-lg transition-colors duration-200"
           >
             View Projects
           </a>
-          <button
-            disabled
-            className="px-6 py-3 border border-slate-800 text-slate-600 font-medium rounded-lg cursor-not-allowed opacity-50"
-            title="Resume coming soon"
+          <a
+            href={personal.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-600 font-medium rounded-lg transition-all duration-200"
           >
-            Download Resume
-          </button>
+            GitHub
+          </a>
+          <a
+            href="#contact"
+            className="px-6 py-3 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-600 font-medium rounded-lg transition-all duration-200"
+          >
+            Contact Me
+          </a>
         </motion.div>
 
         <motion.div
@@ -88,15 +94,6 @@ export default function Hero() {
             className="text-slate-500 hover:text-white transition-colors duration-200"
           >
             <LinkedinIcon size={22} />
-          </a>
-          <a
-            href={personal.x}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="X profile"
-            className="text-slate-500 hover:text-white transition-colors duration-200"
-          >
-            <XIcon size={22} />
           </a>
         </motion.div>
 

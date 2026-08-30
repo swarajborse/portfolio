@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import personal from "../data/personal";
+import { MapPinIcon, GraduationIcon } from "./Icons";
 
 export default function About() {
   return (
@@ -31,21 +32,21 @@ export default function About() {
             </div>
             <div className="p-5 font-mono text-sm leading-relaxed space-y-3">
               <p>
-                <span className="text-emerald-400">$</span> <span className="text-slate-300">cat intro.txt</span>
+                <span className="text-blue-400">$</span> <span className="text-slate-300">cat intro.txt</span>
               </p>
               <p className="text-slate-400">
                 Hi, I&apos;m <span className="text-white font-semibold">{personal.name}</span>, a
-                software engineering student passionate about building real-world
-                applications. I enjoy working across the stack and am always looking
-                for opportunities to learn and grow.
+                B.Tech IT student at Walchand College of Engineering, Sangli. I focus on
+                backend engineering and building production-oriented distributed systems
+                with Java and Spring Boot.
               </p>
               <p>
-                <span className="text-emerald-400">$</span> <span className="text-slate-300">cat interest.txt</span>
+                <span className="text-blue-400">$</span> <span className="text-slate-300">cat interest.txt</span>
               </p>
               <p className="text-slate-400">
-                Started with C++ and problem-solving, now building full-stack web
-                apps with React, Node.js &amp; modern databases. Currently exploring
-                AI/ML and expanding my skill set every day.
+                I work with Redis, Kafka, PostgreSQL, Docker, and cloud technologies to
+                build scalable backend services. I&apos;m passionate about DSA, problem solving,
+                and creating systems that go beyond tutorial-level projects.
               </p>
             </div>
           </motion.div>
@@ -58,7 +59,8 @@ export default function About() {
             className="space-y-6"
           >
             <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-5">
-              <h3 className="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">
+              <h3 className="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                <GraduationIcon size={16} />
                 Education
               </h3>
               <p className="text-slate-300 font-medium">
@@ -67,27 +69,40 @@ export default function About() {
               <p className="text-slate-500 text-sm">
                 {personal.college}
               </p>
+              <p className="text-slate-500 text-sm">
+                {personal.educationYear} &middot; CGPA: {personal.cgpa}
+              </p>
             </div>
 
             <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-5">
-              <h3 className="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">
+              <h3 className="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                <MapPinIcon size={16} />
+                Location
+              </h3>
+              <p className="text-slate-400 text-sm">
+                {personal.location}
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-5">
+              <h3 className="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-3">
                 Current Focus
               </h3>
               <ul className="text-slate-400 text-sm space-y-2">
                 <li className="flex items-center gap-2">
-                  <span className="text-emerald-400">&#9656;</span> C++ / Data Structures &amp; Algorithms
+                  <span className="text-blue-400">&#9656;</span> Java &amp; Spring Boot Backend Engineering
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-emerald-400">&#9656;</span> React &amp; Frontend Development
+                  <span className="text-blue-400">&#9656;</span> Distributed Systems &amp; Event-Driven Architecture
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-emerald-400">&#9656;</span> Node.js &amp; Backend Development
+                  <span className="text-blue-400">&#9656;</span> Redis, Kafka, PostgreSQL, Docker
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-emerald-400">&#9656;</span> FastAPI &amp; Flask
+                  <span className="text-blue-400">&#9656;</span> REST APIs &amp; Scalable Backend Services
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-emerald-400">&#9656;</span> AI/ML fundamentals
+                  <span className="text-blue-400">&#9656;</span> Data Structures &amp; Algorithms
                 </li>
               </ul>
             </div>

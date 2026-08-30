@@ -1,25 +1,24 @@
 import { motion } from "framer-motion";
-import { Mail } from "lucide-react";
-import { LinkedinIcon, XIcon } from "./Icons";
+import { MailIcon, GithubIcon, LinkedinIcon } from "./Icons";
 import personal from "../data/personal";
 
 const contactLinks = [
   {
     label: "Email",
     href: `mailto:${personal.email}`,
-    icon: Mail,
+    icon: MailIcon,
     external: false,
+  },
+  {
+    label: "GitHub",
+    href: personal.github,
+    icon: GithubIcon,
+    external: true,
   },
   {
     label: "LinkedIn",
     href: personal.linkedin,
     icon: LinkedinIcon,
-    external: true,
-  },
-  {
-    label: "X",
-    href: personal.x,
-    icon: XIcon,
     external: true,
   },
 ];
@@ -45,7 +44,7 @@ export default function Contact() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-slate-400 max-w-md mx-auto mb-8"
         >
-          I&apos;m looking forward to new opportunities and collaborations.
+          I&apos;m looking for software engineering and backend developer opportunities.
           Feel free to reach out if you&apos;d like to connect.
         </motion.p>
 

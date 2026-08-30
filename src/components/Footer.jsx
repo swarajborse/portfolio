@@ -1,5 +1,4 @@
-import { Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon, XIcon, CodolioIcon } from "./Icons";
+import { MailIcon, GithubIcon, LinkedinIcon } from "./Icons";
 import personal from "../data/personal";
 
 export default function Footer() {
@@ -31,31 +30,16 @@ export default function Footer() {
             <LinkedinIcon size={16} />
           </a>
           <a
-            href={personal.x}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="X"
-            className="text-slate-600 hover:text-white transition-colors"
-          >
-            <XIcon size={16} />
-          </a>
-          <a
-            href={personal.codolio}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Codolio"
-            className="text-slate-600 hover:text-white transition-colors"
-          >
-            <CodolioIcon size={16} />
-          </a>
-          <a
             href={`mailto:${personal.email}`}
             aria-label="Email"
             className="text-slate-600 hover:text-white transition-colors"
           >
-            <Mail size={16} />
+            <MailIcon size={16} />
           </a>
         </div>
+        <p className="text-slate-600 text-xs">
+          &copy; {new Date().getFullYear()} {personal.name}. All rights reserved.
+        </p>
       </div>
     </footer>
   );

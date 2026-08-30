@@ -6,6 +6,7 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
+  { label: "Journey", href: "#journey" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -58,10 +59,10 @@ export default function Navbar() {
           href="#"
           className="group flex items-center gap-1 text-lg font-bold tracking-tight text-white"
         >
-          AUM<span className="text-emerald-400">.</span>
+          SB<span className="text-blue-400">.</span>
           <ArrowUpRight
             size={16}
-            className="text-emerald-400 opacity-0 -translate-x-1 translate-y-1 transition-all duration-200 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
+            className="text-blue-400 opacity-0 -translate-x-1 translate-y-1 transition-all duration-200 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
           />
         </a>
 
@@ -82,7 +83,7 @@ export default function Navbar() {
                 {isActive && (
                   <motion.span
                     layoutId="active-nav"
-                    className="absolute -bottom-2 left-0 right-0 h-[2px] rounded-full bg-emerald-400"
+                    className="absolute -bottom-2 left-0 right-0 h-[2px] rounded-full bg-blue-400"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -117,7 +118,7 @@ export default function Navbar() {
                       className="flex items-baseline gap-3 rounded-lg px-4 py-2.5 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
                       onClick={() => setIsOpen(false)}
                     >
-                      <span className="font-mono text-xs text-emerald-400">
+                      <span className="font-mono text-xs text-blue-400">
                         0{i + 1}
                       </span>
                       {link.label}
