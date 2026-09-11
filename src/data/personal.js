@@ -1,7 +1,7 @@
 const personal = {
   name: "Swaraj Borse",
   initials: "SB",
-  headline: "Software Engineer • Backend Developer • Distributed Systems",
+  headline: "Full Stack Developer • Distributed Systems",
   shortTitle: "Software Engineer",
   email: "borseswaraj2005@gmail.com",
   phone: "7020504690",
