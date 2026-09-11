@@ -20,7 +20,7 @@ const personal = {
       "I'm deeply interested in how distributed systems handle concurrency, fault tolerance, and horizontal scaling. My toolkit includes Redis, Kafka, PostgreSQL, Docker, and cloud services. I enjoy solving DSA problems and building systems that go beyond tutorial-level projects.",
   },
   tagline:
-    "Building scalable backend systems, event-driven architectures, and production-ready APIs with Java, Spring Boot, Redis, Kafka, and PostgreSQL.",
+    "Building scalable backend systems, event-driven architectures, and production-ready APIs with Java, Spring Boot, Redis, Kafka, PostgreSQL, and AWS. Strong foundation in system design and distributed architectures.",
 };
 
 export default personal;
