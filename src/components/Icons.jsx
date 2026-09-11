@@ -69,19 +69,13 @@ export function LeetcodeIcon({ size = 24, className = "" }) {
       className={className}
     >
       <path
-        d="M13.5 1.5L6 8v3.5l7.5-6.5L21 11.5V8l-7.5-6.5zM6 13v3.5l7.5 6.5L21 13v-3.5l-7.5 6.5L6 13z"
+        d="M12 2L3 12l9 10V17l-5-5 5-5V2z"
         fill="#FFA116"
       />
       <path
-        d="M13.5 1.5L6 8v3.5l7.5-6.5L21 11.5V8l-7.5-6.5zM6 13v3.5l7.5 6.5L21 13v-3.5l-7.5 6.5L6 13z"
+        d="M12 2l9 10-9 10V17l5-5-5-5V2z"
         fill="#A2A2A2"
-        clipPath="url(#lc-clip)"
       />
-      <defs>
-        <clipPath id="lc-clip">
-          <rect x="13" y="0" width="11" height="24" />
-        </clipPath>
-      </defs>
     </svg>
   );
 }
