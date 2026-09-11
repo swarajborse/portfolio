@@ -66,16 +66,10 @@ export function LeetcodeIcon({ size = 24, className = "" }) {
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fill="currentColor"
       className={className}
     >
-      <path d="M12 2L2 7l10 5 10-5-10-5z" />
-      <path d="M2 17l10 5 10-5" />
-      <path d="M2 12l10 5 10-5" />
+      <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.779 6.241a1.374 1.374 0 0 0 0 1.929l4.743 5.804a1.374 1.374 0 0 0 1.929 0l4.743-5.804a1.374 1.374 0 0 0 0-1.929L14.444.438A1.374 1.374 0 0 0 13.483 0zm-2.961 3.427l-4.743 5.804a1.374 1.374 0 0 0 0 1.929l4.743 5.804a1.374 1.374 0 0 0 1.929 0l4.743-5.804a1.374 1.374 0 0 0 0-1.929l-4.743-5.804a1.374 1.374 0 0 0-1.929 0zM9.208 22.387V8.828L4.142 15.11l5.066 7.277zm5.584 0V8.828l5.066 6.282-5.066 7.277z" />
     </svg>
   );
 }
