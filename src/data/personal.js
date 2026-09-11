@@ -7,6 +7,7 @@ const personal = {
   phone: "7020504690",
   github: "https://github.com/swarajborse",
   linkedin: "https://linkedin.com/in/swaraj-borse",
+  leetcode: "https://leetcode.com/u/swaraj_43/",
   location: "Sangli, Maharashtra, India",
   degree: "B.Tech in Information Technology",
   college: "Walchand College of Engineering, Sangli",

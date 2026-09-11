@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "./Icons";
+import { GithubIcon, LinkedinIcon, LeetcodeIcon } from "./Icons";
 import personal from "../data/personal";
 
 export default function Hero() {
@@ -102,6 +102,15 @@ export default function Hero() {
             className="text-slate-500 hover:text-white transition-colors duration-200"
           >
             <LinkedinIcon size={22} />
+          </a>
+          <a
+            href={personal.leetcode}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LeetCode profile"
+            className="text-slate-500 hover:text-white transition-colors duration-200"
+          >
+            <LeetcodeIcon size={22} />
           </a>
         </motion.div>
 

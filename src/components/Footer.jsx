@@ -1,4 +1,4 @@
-import { MailIcon, GithubIcon, LinkedinIcon } from "./Icons";
+import { MailIcon, GithubIcon, LinkedinIcon, LeetcodeIcon } from "./Icons";
 import personal from "../data/personal";
 
 export default function Footer() {
@@ -28,6 +28,15 @@ export default function Footer() {
             className="text-slate-600 hover:text-white transition-colors"
           >
             <LinkedinIcon size={16} />
+          </a>
+          <a
+            href={personal.leetcode}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LeetCode"
+            className="text-slate-600 hover:text-white transition-colors"
+          >
+            <LeetcodeIcon size={16} />
           </a>
           <a
             href={`mailto:${personal.email}`}
