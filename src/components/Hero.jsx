@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./Icons";
 import personal from "../data/personal";
 
@@ -62,6 +62,14 @@ export default function Hero() {
             className="px-6 py-3 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-600 font-medium rounded-lg transition-all duration-200"
           >
             GitHub
+          </a>
+          <a
+            href="/resume.pdf"
+            download
+            className="px-6 py-3 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-600 font-medium rounded-lg transition-all duration-200 inline-flex items-center gap-2"
+          >
+            <Download size={16} />
+            Resume
           </a>
           <a
             href="#contact"
